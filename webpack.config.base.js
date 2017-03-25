@@ -35,6 +35,7 @@ export default {
 
   plugins: [
     new webpack.NamedModulesPlugin(),
+    new webpack.DefinePlugin({ "global.GENTLY": false }),
   ],
 
   externals: Object.keys(externals || {})
