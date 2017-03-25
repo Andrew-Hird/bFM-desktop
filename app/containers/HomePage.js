@@ -8,8 +8,11 @@ function mapStateToProps(state) {
   return {
     home: state.home,
     nowPlaying: state.nowPlaying,
-    hasErrored: state.nowPlayingHasErrored,
-    isLoading: state.nowPlayingIsLoading
+    nowPlayingHasErrored: state.nowPlayingHasErrored,
+    nowPlayingIsLoading: state.nowPlayingIsLoading,
+    currentShow: state.currentShow,
+    currentShowHasErrored: state.currentShowHasErrored,
+    currentShowIsLoading: state.currentShowIsLoadings
   };
 }
 

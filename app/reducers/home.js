@@ -24,3 +24,28 @@ export function nowPlaying(state = '', action) {
             return state;
     }
 }
+
+export function currentShowHasErrored(state = false, action) {
+    switch (action.type) {
+        case 'CURRENT_SHOW_HAS_ERRORED':
+            return action.hasErrored;
+        default:
+            return state;
+    }
+}
+export function currentShowIsLoading(state = false, action) {
+    switch (action.type) {
+        case 'CURRENT_SHOW_IS_LOADING':
+            return action.isLoading;
+        default:
+            return state;
+    }
+}
+export function currentShow(state = '', action) {
+    switch (action.type) {
+        case 'CURRENT_SHOW_FETCH_DATA_SUCCESS':
+            return action.currentShow;
+        default:
+            return state;
+    }
+}

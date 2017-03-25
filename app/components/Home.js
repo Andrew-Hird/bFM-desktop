@@ -7,13 +7,16 @@ class Home extends Component {
   
    componentWillMount() {
      this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15');
+     this.props.currentShowFetchData('http://95bfm.com/block_refresh/bfm_tweaks/current_show');
    }
 
    componentDidMount() {
      setInterval(() => {
-       console.log('timer called')
        this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15');
      }, 10000)
+     setInterval(() => {
+       this.props.currentShowFetchData('http://95bfm.com/block_refresh/bfm_tweaks/current_show');
+     }, 60000)
     };
 
   render() {
@@ -27,7 +30,7 @@ class Home extends Component {
                Now Playing:{this.props.nowPlaying}
             </div>
             <div>
-              Current Show:
+              Current Show:{this.props.currentShow}
             </div>
         </div>
       </div>
