@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import styles from './Home.css';
 
+let bFM = new Audio('http://streams.95bfm.com/stream128');
+
 class Home extends Component {
   
    componentWillMount() {
@@ -20,17 +22,20 @@ class Home extends Component {
     };
 
   render() {
+
     return (
       <div>
         <div className={styles.container} data-tid="container">
           <h2>bFM Player</h2>
-          <audio controls src="http://streams.95bfm.com/stream128" />
-          <br/>
+
+          <div>
+              <button onClick={() => bFM.play()}>start bFM</button>
+              <button onClick={() => bFM.pause()}>pause bFM</button>
+          </div>
+
             <div>
-               Now Playing:{this.props.nowPlaying}
-            </div>
-            <div>
-              Current Show:{this.props.currentShow}
+               <p>Now Playing:{this.props.nowPlaying}</p>
+               <p>Current Show:{this.props.currentShow}</p>
             </div>
         </div>
       </div>
