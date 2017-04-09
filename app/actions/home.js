@@ -1,6 +1,16 @@
 // @flow
 
+import { SpotifySearch } from '../scripts/spotify-search';
+
 import request from 'superagent';
+
+export function isPlaying(bool) {
+    return {
+        type: 'IS_PLAYING',
+        isPlaying: bool
+    };
+}
+
 
 export function nowPlayingHasErrored(bool) {
     return {
@@ -37,11 +47,21 @@ export function nowPlayingFetchData(url) {
                     .replace(/&lt;/g, "<")
                     .replace(/&gt/g, ">")
                     .replace(/&quot;/g, "\"")
-                    .replace(/&#039;/g, "'");
+                    .replace(/&#039;/g, "'")
+                    .trim();
             })
             .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess(nowPlaying)))
+            .then((nowPlaying) => SpotifySearch(nowPlaying))
+            .then((spotifyLink) => dispatch(nowPlayingSpotify(spotifyLink)))
             .catch(() => dispatch(nowPlayingHasErrored(true)));
     };    
+}
+
+export function nowPlayingSpotify(spotifyLink) {
+    return {
+        type: 'NOW_PLAYING_SPOTIFY_LINK',
+        link: spotifyLink
+    };
 }
 
 export function currentShowHasErrored(bool) {
@@ -80,7 +100,8 @@ export function currentShowFetchData(url) {
                     .replace(/&lt;/g, "<")
                     .replace(/&gt/g, ">")
                     .replace(/&quot;/g, "\"")
-                    .replace(/&#039;/g, "'");
+                    .replace(/&#039;/g, "'")
+                    .trim();
             })
             .then((currentShow) => dispatch(currentShowFetchDataSuccess(currentShow)))
             .catch(() => dispatch(currentShowHasErrored(true)));

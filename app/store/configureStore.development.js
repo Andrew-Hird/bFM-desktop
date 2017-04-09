@@ -8,8 +8,12 @@ import rootReducer from '../reducers';
 import * as counterActions from '../actions/counter';
 import type { counterStateType } from '../reducers/counter';
 
+// import * as homeActions from '../actions/home';
+// import type { homeStateType } from '../reducers/home';
+
 const actionCreators = {
   ...counterActions,
+  // ...homeActions,
   push,
 };
 

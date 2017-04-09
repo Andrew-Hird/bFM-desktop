@@ -29,6 +29,24 @@ export default merge(baseConfig, {
   module: {
     rules: [
       {
+        test: /\.global\css$/,
+        include: [path.modules + '/react-toolbox/'],
+        use: [
+          "style-loader",
+          'css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?sourceMap&sourceComments',
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              sourceMap: true,
+              importLoaders: 1,
+              localIdentName: "[name]--[local]--[hash:base64:8]"
+            }
+          },
+          "postcss-loader" // has separate config, see postcss.config.js nearby
+        ]
+      },
+      {
         test: /\.global\.css$/,
         use: [
           { loader: 'style-loader' },

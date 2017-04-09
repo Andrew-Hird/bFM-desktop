@@ -1,50 +1,75 @@
 // @flow
 
-export function nowPlayingHasErrored(state = false, action) {
+// export type homeStateType = {
+//   home: number
+// };
+
+
+export function streamPlaying(state = false, action) {
     switch (action.type) {
-        case 'NOW_PLAYING_HAS_ERRORED':
-            return action.hasErrored;
-        default:
-            return state;
-    }
-}
-export function nowPlayingIsLoading(state = false, action) {
-    switch (action.type) {
-        case 'NOW_PLAYING_IS_LOADING':
-            return action.isLoading;
-        default:
-            return state;
-    }
-}
-export function nowPlaying(state = '', action) {
-    switch (action.type) {
-        case 'NOW_PLAYING_FETCH_DATA_SUCCESS':
-            return action.nowPlaying;
+
+        case 'IS_PLAYING':
+            return action.isPlaying
+
         default:
             return state;
     }
 }
 
-export function currentShowHasErrored(state = false, action) {
+export function nowPlaying(state = {}, action) {
     switch (action.type) {
+
+        case 'NOW_PLAYING_HAS_ERRORED':
+            return {
+                ...state,
+                nowPlayingHasErrored: action.hasErrored
+            }
+
+        case 'NOW_PLAYING_IS_LOADING':
+            return {
+                ...state,
+                nowPlayingIsLoading: action.isLoading
+            }
+
+        case 'NOW_PLAYING_FETCH_DATA_SUCCESS':
+            return {
+                ...state,
+                song: action.nowPlaying
+            }
+        
+        case 'NOW_PLAYING_SPOTIFY_LINK':
+            return {
+                ...state,
+                spotifyLink: action.link
+            }
+        
+        default:
+            return state;
+
+    }
+}
+
+export function currentShow(state = {}, action) {
+    switch (action.type) {
+
         case 'CURRENT_SHOW_HAS_ERRORED':
-            return action.hasErrored;
-        default:
-            return state;
-    }
-}
-export function currentShowIsLoading(state = false, action) {
-    switch (action.type) {
+            return {
+                ...state,
+                currentShowHasErrored: action.hasErrored
+            }
+
         case 'CURRENT_SHOW_IS_LOADING':
-            return action.isLoading;
-        default:
-            return state;
-    }
-}
-export function currentShow(state = '', action) {
-    switch (action.type) {
+            return {
+                ...state,
+                currentShowIsLoading: action.isLoading
+            }
+
         case 'CURRENT_SHOW_FETCH_DATA_SUCCESS':
-            return action.currentShow;
+            return {
+                ...state,
+                show: action.currentShow
+            }
+
         default:
             return state;
     }

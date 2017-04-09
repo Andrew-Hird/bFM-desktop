@@ -6,13 +6,7 @@ import * as HomeActions from '../actions/home'
 
 function mapStateToProps(state) {
   return {
-    home: state.home,
-    nowPlaying: state.nowPlaying,
-    nowPlayingHasErrored: state.nowPlayingHasErrored,
-    nowPlayingIsLoading: state.nowPlayingIsLoading,
-    currentShow: state.currentShow,
-    currentShowHasErrored: state.currentShowHasErrored,
-    currentShowIsLoading: state.currentShowIsLoadings
+    ...state
   };
 }
 

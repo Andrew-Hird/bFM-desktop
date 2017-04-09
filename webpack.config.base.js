@@ -9,10 +9,10 @@ import { dependencies as externals } from './app/package.json';
 export default {
   module: {
     rules: [{
-      test: /\.jsx?$/,
-      use: 'babel-loader',
-      exclude: /node_modules/
-    }]
+        test: /\.jsx?$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      }]
   },
 
   output: {
@@ -26,7 +26,7 @@ export default {
    * Determine the array of extensions that should be used to resolve modules.
    */
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json','.scss'],
     modules: [
       path.join(__dirname, 'app'),
       'node_modules',
