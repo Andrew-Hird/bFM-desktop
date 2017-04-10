@@ -51,7 +51,7 @@ export function nowPlayingFetchData(url) {
                     .trim();
             })
             .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess(nowPlaying)))
-            .then((nowPlaying) => SpotifySearch(nowPlaying))
+            .then((nowPlaying) => SpotifySearch(nowPlaying.nowPlaying))
             .then((spotifyLink) => dispatch(nowPlayingSpotify(spotifyLink)))
             .catch(() => dispatch(nowPlayingHasErrored(true)));
     };    

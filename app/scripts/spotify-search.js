@@ -19,6 +19,8 @@ export function SpotifySearch(nowPlaying) {
                 for (let i = 0; i < arr.length; i++ ) {
                     if(arr[i].name.toLowerCase() === song.toLowerCase()) {
                         return arr[i].external_urls.spotify;
+                    } else {
+                        return false;
                     }
                 }
             })
