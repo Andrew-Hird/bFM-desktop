@@ -50,8 +50,8 @@ export function nowPlayingFetchData(url) {
                     .replace(/&#039;/g, "'")
                     .trim();
             })
-            // .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess(nowPlaying)))
-            .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess('jimi hendrix - purple haze')))
+            .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess(nowPlaying)))
+            // .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess('jimi hendrix - purple haze')))
             .then((nowPlaying) => {
                 spotify(dispatch, nowPlaying.nowPlaying);
                 // bandcamp(nowPlaying.nowPlaying, disptch);

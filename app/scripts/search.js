@@ -22,7 +22,7 @@ export function SpotifySearch(dispatch, spotifyDispatch, nowPlaying) {
                         var data = {
                             webUrl: arr[i].external_urls.spotify,
                             appUri: arr[i].uri,
-                            albumArt: arr[i].album.images[0].url
+                            albumArt: arr[i].album.images[1].url
                         }
                         return spotifyDispatch(dispatch, data);
                     } else {

@@ -99,7 +99,7 @@ class Home extends Component {
                     <p>find on spotify</p>
                  </a>
                : 
-               null }
+               <img className={styles.altImage} src="https://www.xtrme.com/wp-content/uploads/2011/11/record.png" alt=""/> }
 
             </div>
         </div>

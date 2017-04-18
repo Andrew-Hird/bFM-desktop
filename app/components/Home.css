@@ -17,6 +17,13 @@
   border-radius: 10px;
 }
 
+.altImage {
+  margin-top: 25px;
+  width: 50%;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
 a {
   opacity: 1 !important;
 }
