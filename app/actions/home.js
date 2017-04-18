@@ -1,6 +1,6 @@
 // @flow
 
-import { SpotifySearch } from '../scripts/spotify-search';
+import { SpotifySearch, BandcampSearch } from '../scripts/search';
 
 import request from 'superagent';
 
@@ -42,7 +42,7 @@ export function nowPlayingFetchData(url) {
                 }
                 dispatch(nowPlayingIsLoading(false));
                 return response.text
-                    .replace(/(<([^>]+)>)/ig,"")
+                    .replace(/(<([^>]+)>)/ig, "")
                     .replace(/&amp;/g, "&")
                     .replace(/&lt;/g, "<")
                     .replace(/&gt/g, ">")
@@ -50,17 +50,44 @@ export function nowPlayingFetchData(url) {
                     .replace(/&#039;/g, "'")
                     .trim();
             })
-            .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess(nowPlaying)))
-            .then((nowPlaying) => SpotifySearch(nowPlaying.nowPlaying))
-            .then((spotifyLink) => dispatch(nowPlayingSpotify(spotifyLink)))
+            // .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess(nowPlaying)))
+            .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess('jimi hendrix - purple haze')))
+            .then((nowPlaying) => {
+                spotify(dispatch, nowPlaying.nowPlaying);
+                // bandcamp(nowPlaying.nowPlaying, disptch);
+                // bandcamp(dispatch, 'PALS+-+Pipes');
+            })
             .catch(() => dispatch(nowPlayingHasErrored(true)));
-    };    
+    };
 }
 
-export function nowPlayingSpotify(spotifyLink) {
+export function spotify(dispatch, nowPlaying) {
+   SpotifySearch(dispatch, spotifyDispatch, nowPlaying)
+}
+
+export function spotifyDispatch(dispatch, spotifyData) {
+        dispatch(nowPlayingSpotify(spotifyData))
+}
+
+export function bandcamp(dispatch, nowPlaying) {
+   BandcampSearch(dispatch, bandcampDispatch, nowPlaying)
+}
+
+export function bandcampDispatch(dispatch, bandcampLink) {
+        dispatch(nowPlayingBandcamp(bandcampLink))
+}
+
+export function nowPlayingSpotify(spotifyData) {
     return {
-        type: 'NOW_PLAYING_SPOTIFY_LINK',
-        link: spotifyLink
+        type: 'NOW_PLAYING_SPOTIFY',
+        spotifyData: spotifyData
+    };
+}
+
+export function nowPlayingBandcamp(bandcampLink) {
+    return {
+        type: 'NOW_PLAYING_BANDCAMP_LINK',
+        link: bandcampLink
     };
 }
 
@@ -93,9 +120,9 @@ export function currentShowFetchData(url) {
                     throw Error(`an error has occurred`);
                 }
                 dispatch(currentShowIsLoading(false));
-                
+
                 return response.text
-                    .replace(/(<([^>]+)>)/ig,"")
+                    .replace(/(<([^>]+)>)/ig, "")
                     .replace(/&amp;/g, "&")
                     .replace(/&lt;/g, "<")
                     .replace(/&gt/g, ">")
@@ -105,5 +132,5 @@ export function currentShowFetchData(url) {
             })
             .then((currentShow) => dispatch(currentShowFetchDataSuccess(currentShow)))
             .catch(() => dispatch(currentShowHasErrored(true)));
-    };    
+    };
 }

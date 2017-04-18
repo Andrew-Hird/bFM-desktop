@@ -1,0 +1,316 @@
+Script started on Tue Apr 11 23:10:19 2017
+[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app]1;..M-desktop/app[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hsscrips ta s[1m/[0m[0m [?1l>[?2004l
+]2;scripts]1;scripts[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hbband  b  nnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;node[ { title: 'Tibetan Pop Stars',
+    album: 'Motherbird 2009-2009',
+    artist: 'Nickerson Leap',
+    image: 'https://f4.bcbits.com/img/a1555697590_7.jpg',
+    url: 'https://nickersonleap.bandcamp.com/track/tibetan-pop-stars' },
+  { title: 'Tibetan Pop Stars',
+    album: 'Get Disowned',
+    artist: 'Hop Along',
+    image: 'https://f4.bcbits.com/img/a0868243390_7.jpg',
+    url: 'https://hopalong.bandcamp.com/track/tibetan-pop-stars' },
+  { title: 'Tibetan Pop Stars',
+    album: '2013 Sampler',
+    artist: 'Hop Along',
+    image: 'https://f4.bcbits.com/img/a0469837316_7.jpg',
+    url: 'https://bsmrocks.bandcamp.com/track/tibetan-pop-stars-2' },
+  { title: 'Tibetan Pop Stars',
+    album: 'Radical Friends',
+    artist: 'Hop Along',
+    image: 'https://f4.bcbits.com/img/a2503319347_7.jpg',
+    url: 'http://music.tangledtalk.com/track/tibetan-pop-stars' },
+  { title: 'Tibetan Pop Stars',
+    album: 'Get Disowned',
+    artist: 'Hop Along',
+    image: 'https://f4.bcbits.com/img/a0655578045_7.jpg',
+    url: 'https://bsmrocks.bandcamp.com/track/tibetan-pop-stars' },
+  { title: 'tibetan pop stars',
+    album: 'Covers',
+    artist: 'Karmyn',
+    image: 'https://f4.bcbits.com/img/a1651839683_7.jpg',
+    url: 'https://karmynv.bandcamp.com/track/tibetan-pop-stars' },
+  { title: 'Tibetan Pop Stars (Cover)',
+    album: null,
+    artist: null,
+    image: 'https://f4.bcbits.com/img/a1042526443_7.jpg',
+    url: 'https://probablyfl.bandcamp.com/track/tibetan-pop-stars-cover' },
+  { title: 'Hop Along – Tibetan Pop Stars',
+    album: 'Outside The Square',
+    artist: 'One Beat presents...',
+    image: 'https://f4.bcbits.com/img/a0192783425_7.jpg',
+    url: 'https://one-beat.bandcamp.com/track/hop-along-tibetan-pop-stars' },
+  { title: 'Tibetan Pop Stars (Hop Along Cover)',
+    album: 'Radio Songs',
+    artist: 'Lady Queen Paradise',
+    image: 'https://f4.bcbits.com/img/a1660869568_7.jpg',
+    url: 'https://jonthearchivist.bandcamp.com/track/tibetan-pop-stars-hop-along-cover' },
+  { title: 'tibetan ghost nursery',
+    album: 'the endless',
+    artist: 'kvntdestroyr',
+    image: 'https://f4.bcbits.com/img/a2331707404_7.jpg',
+    url: 'https://kvntdestroyr.bandcamp.com/track/tibetan-ghost-nursery' },
+  { title: 'Táxi Tibetano',
+    album: 'k7',
+    artist: 'arthuri',
+    image: 'https://f4.bcbits.com/img/a2422118098_7.jpg',
+    url: 'https://arthuri.bandcamp.com/track/t-xi-tibetano' },
+  { title: 'Stars and Titans',
+    album: 'Paths',
+    artist: 'Aurora Complex',
+    image: 'https://f4.bcbits.com/img/a0922122588_7.jpg',
+    url: 'https://auroracomplextx.bandcamp.com/track/stars-and-titans' },
+  { title: 'Tibetan Guitars',
+    album: 'SO SO SO WE SEE / TRENCHES IN THE SUN',
+    artist: 'ANDY BOAY',
+    image: 'https://f4.bcbits.com/img/a2494842619_7.jpg',
+    url: 'https://andyboay.bandcamp.com/track/tibetan-guitars' },
+  { title: 'Tibetan Metastate',
+    album: 'Boxcutter - Gnosis E.P.',
+    artist: 'Boxcutter',
+    image: 'https://f4.bcbits.com/img/a3840614725_7.jpg',
+    url: 'https://barryboxcutter.bandcamp.com/track/tibetan-metastate' },
+  { title: 'Cuencos Tibetanos',
+    album: 'Para Trance',
+    artist: 'Sonido Interior',
+    image: 'https://f4.bcbits.com/img/a3215358290_7.jpg',
+    url: 'https://sonidointerior.bandcamp.com/track/cuencos-tibetanos' },
+  { title: 'Cuencos Tibetanos',
+    album: 'Saliendo al Mundo',
+    artist: 'Magos Galacticos',
+    image: 'https://f4.bcbits.com/img/a3746035846_7.jpg',
+    url: 'https://magosgalacticos.bandcamp.com/track/cuencos-tibetanos' },
+  { title: 'Tibetan Monastry',
+    album: 'CLOUDS',
+    artist: 'Pieter Egriega',
+    image: 'https://f4.bcbits.com/img/a2034969829_7.jpg',
+    url: 'https://egriega.bandcamp.com/track/tibetan-monastry' } ]
+[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;node[ { title: 'Heavy Metal Knights',
+    album: 'Pitch Black Records 5 Years Sampler (2008-2013)',
+    artist: 'LETHAL SAINT',
+    image: 'https://f4.bcbits.com/img/a1711766871_7.jpg',
+    url: 'https://pitchblackrecords.bandcamp.com/track/heavy-metal-knights-2' },
+  { title: 'Heavy Metal Knights',
+    album: 'Lethal Saint',
+    artist: 'LETHAL SAINT',
+    image: 'https://f4.bcbits.com/img/a3471595093_7.jpg',
+    url: 'https://pitchblackrecords.bandcamp.com/track/heavy-metal-knights' },
+  { title: 'Heavy Metal Knights',
+    album: 'Crossing the Sky',
+    artist: 'Crimson Valley',
+    image: 'https://f4.bcbits.com/img/a0553264823_7.jpg',
+    url: 'https://crimsonvalley.bandcamp.com/track/heavy-metal-knights' },
+  { title: 'TheLastKnight',
+    album: null,
+    artist: null,
+    image: 'https://f4.bcbits.com/img/a0849390457_7.jpg',
+    url: 'https://holysain.bandcamp.com/track/thelastknight' },
+  { title: 'SouthEastNights',
+    album: 'ElFuturoEraEsto vol.1',
+    artist: 'aaronsaez',
+    image: 'https://f4.bcbits.com/img/a4112074268_7.jpg',
+    url: 'https://aaronsaez.bandcamp.com/track/southeastnights' },
+  { title: 'The Knight Waste',
+    album: 'Wastelands',
+    artist: 'Protector 101',
+    image: 'https://f4.bcbits.com/img/a2665322495_7.jpg',
+    url: 'https://telefuturenow.bandcamp.com/track/the-knight-waste' },
+  { title: 'Heavy Straighter',
+    album: 'Unlike a Virgin',
+    artist: 'Silence',
+    image: 'https://f4.bcbits.com/img/a3870661904_7.jpg',
+    url: 'https://silencezone.bandcamp.com/track/heavy-straighter' },
+  { title: 'Straight to Heavy',
+    album: 'Straight to Heavy',
+    artist: 'Tokyo Savannah',
+    image: 'https://f4.bcbits.com/img/a4066784295_7.jpg',
+    url: 'https://tokyosavannah.bandcamp.com/track/straight-to-heavy' },
+  { title: 'Heavyweight Stout',
+    album: 'Heavyweight Stout',
+    artist: 'The Arabs',
+    image: 'https://f4.bcbits.com/img/a0864038668_7.jpg',
+    url: 'https://thearabsmusic.bandcamp.com/track/heavyweight-stout' },
+  { title: 'Heavy Metal Night',
+    album: 'The Midwinter Tapes',
+    artist: 'Angel Sword',
+    image: 'https://f4.bcbits.com/img/a3882923818_7.jpg',
+    url: 'https://angelsword.bandcamp.com/track/heavy-metal-night' },
+  { title: 'Heavy Metal Night',
+    album: 'Rebels Beyond the Pale',
+    artist: 'Angel Sword',
+    image: 'https://f4.bcbits.com/img/a3541862054_7.jpg',
+    url: 'https://angelsword.bandcamp.com/track/heavy-metal-night-2' },
+  { title: 'The Mystery Knight',
+    album: 'A Knight Of The Seven Kingdoms',
+    artist: 'UNspoiled! ASOIAF',
+    image: 'https://f4.bcbits.com/img/a0416895829_7.jpg',
+    url: 'https://unspoiledasoiaf.bandcamp.com/track/the-mystery-knight' },
+  { title: 'Heavyweight History',
+    album: 'Respect the Culture',
+    artist: 'Mico & Simon-Sez',
+    image: 'https://f4.bcbits.com/img/a0264308156_7.jpg',
+    url: 'https://enterthecommissionuk.bandcamp.com/track/heavyweight-history' },
+  { title: 'I Hope Tonight You Rest Your Heavy Head',
+    album: '1: South Slope and Bushwick',
+    artist: 'my life as a bird',
+    image: 'https://f4.bcbits.com/img/a2912252959_7.jpg',
+    url: 'https://mylifeasabird.bandcamp.com/track/i-hope-tonight-you-rest-your-heavy-head' },
+  { title: 'Light Stars, Heavy Lids',
+    album: '11001100110',
+    artist: 'Binary Trio',
+    image: 'https://f4.bcbits.com/img/a3749773588_7.jpg',
+    url: 'https://ryanmoseslidstone.bandcamp.com/track/light-stars-heavy-lids' },
+  { title: 'Heavy Metal Nightmare',
+    album: 'Cornbag EP',
+    artist: 'Head Like A Hole',
+    image: 'https://f4.bcbits.com/img/a1290804631_7.jpg',
+    url: 'https://headlikeahole.bandcamp.com/track/heavy-metal-nightmare' },
+  { title: 'Heavy Metal Nightmare',
+    album: 'D8 SOS: Lasagna Rising',
+    artist: 'Disproof',
+    image: 'https://f4.bcbits.com/img/a1681697384_7.jpg',
+    url: 'https://disproof.bandcamp.com/track/heavy-metal-nightmare' },
+  { title: 'Lonestar Heavyweight',
+    album: 'Lonestar Heavyweight | Single',
+    artist: 'James Riley',
+    image: 'https://f4.bcbits.com/img/a0613219969_7.jpg',
+    url: 'https://jamesrileymusic.bandcamp.com/track/lonestar-heavyweight' },
+  { title: 'Cold Waste "Heavyweight"',
+    album: 'Burnt Waste',
+    artist: 'Cold Waste / Burnt Hair',
+    image: 'https://f4.bcbits.com/img/a4279465730_7.jpg',
+    url: 'https://deadtankrecords.bandcamp.com/track/cold-waste-heavyweight' },
+  { title: 'The Knight\'s Last Dream',
+    album: 'On the Edge of Silver Wood',
+    artist: 'Roland and Justin',
+    image: 'https://f4.bcbits.com/img/a3729403387_7.jpg',
+    url: 'https://evahipseymusic.bandcamp.com/track/the-knights-last-dream' },
+  { title: 'Heavy Rainstorm at Night',
+    album: 'Heavy Rainstorm at Night',
+    artist: 'Linder Valley',
+    image: 'https://f4.bcbits.com/img/a2253677088_7.jpg',
+    url: 'https://lindervalley.bandcamp.com/track/heavy-rainstorm-at-night' },
+  { title: 'Heavy Straight (Saklegho)',
+    album: 'Too Late For Roses',
+    artist: 'Mortal Bicycle',
+    image: 'https://f4.bcbits.com/img/a0895873204_7.jpg',
+    url: 'https://mortalbicycle.bandcamp.com/track/heavy-straight-saklegho' },
+  { title: 'Cold Waste - Heavyweight',
+    album: 'Burnt Waste',
+    artist: 'Cold Waste / Burnt Hair',
+    image: 'https://f4.bcbits.com/img/a2657041562_7.jpg',
+    url: 'https://popnihil.bandcamp.com/track/cold-waste-heavyweight' },
+  { title: 'The Old Knight\'s Last Breath',
+    album: 'Dark Age Visions',
+    artist: 'Sequestered Keep',
+    image: 'https://f4.bcbits.com/img/a2893724432_7.jpg',
+    url: 'https://sequesteredkeep.bandcamp.com/track/the-old-knights-last-breath' },
+  { title: 'playing heavy metal tonight',
+    album: null,
+    artist: null,
+    image: 'https://f4.bcbits.com/img/a1403600225_7.jpg',
+    url: 'https://coaldaleroad.bandcamp.com/track/playing-heavy-metal-tonight' },
+  { title: 'Thesenights',
+    album: 'The Pre-Fix EP',
+    artist: 'Princeton Parks',
+    image: 'https://f4.bcbits.com/img/a0394929415_7.jpg',
+    url: 'https://princetonparks.bandcamp.com/track/thesenights' },
+  { title: 'For the Night (Heavy D Tribute)',
+    album: 'Next Round',
+    artist: 'Hanz Nobe',
+    image: 'https://f4.bcbits.com/img/a3679947471_7.jpg',
+    url: 'https://hanznobe.bandcamp.com/track/for-the-night-heavy-d-tribute' },
+  { title: 'Heat Knight',
+    album: 'Punx Is Techno C67',
+    artist: 'Dentana',
+    image: 'https://f4.bcbits.com/img/a3870508389_7.jpg',
+    url: 'https://endresultproductions.bandcamp.com/track/heat-knight-2' },
+  { title: 'White Laces - Heavy Nights',
+    album: 'RVA Magazine X Sounds Of RVA "Party Hard" Mixtape',
+    artist: 'RVA Mag',
+    image: 'https://f4.bcbits.com/img/a1583378278_7.jpg',
+    url: 'https://rvamag.bandcamp.com/track/white-laces-heavy-nights' },
+  { title: 'these.nights',
+    album: '404Sessions',
+    artist: 'Toonorth',
+    image: 'https://f4.bcbits.com/img/a1941601502_7.jpg',
+    url: 'https://toonorth.bandcamp.com/track/these-nights' } ]
+[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;node[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;node[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;node[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;nodesearching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+finished searching
+[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;nodesearching
+finished searching
+[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004hnode bandcamptest[?1l>[?2004l
+]2;node bandcamptest]1;nodesearching
+finished searching
+[1m[7m%[27m[1m[0m                                                                                         ]2;Andrew@Andrew: ~/Workspace/bFM-desktop/app/scripts]1;..p/app/scripts[0m[27m[24m[J╭─➳ [1m[34m ~/Workspace/bFM-desktop/app/scripts[00m  [33m‹master*› [00m[00m
+╰─[1m$[0m [K[?1h=[?2004h

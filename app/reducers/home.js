@@ -37,10 +37,16 @@ export function nowPlaying(state = {}, action) {
                 song: action.nowPlaying
             }
         
-        case 'NOW_PLAYING_SPOTIFY_LINK':
+        case 'NOW_PLAYING_SPOTIFY':
             return {
                 ...state,
-                spotifyLink: action.link
+                spotifyData: action.spotifyData
+            }
+        
+        case 'NOW_PLAYING_BANDCAMP_LINK':
+            return {
+                ...state,
+                bandcampLink: action.link
             }
         
         default:

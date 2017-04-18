@@ -33,7 +33,7 @@ class Home extends Component {
 
    componentDidMount() {
      setInterval(() => {
-       this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15');
+       this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15')
      }, 10000)
      setInterval(() => {
        this.props.currentShowFetchData('http://95bfm.com/block_refresh/bfm_tweaks/current_show');
@@ -67,7 +67,7 @@ class Home extends Component {
           
           <a onClick={() => shell.openExternal('http://95bfm.com')}>
             {/*<img src="./images/bfm.png" alt="95bFM" />*/}
-            <img src="http://95bfm.com/sites/all/themes/bfm_ui/images/95bfm-logo.svg" alt="95bFM" />
+            <img className={styles.logo} src="http://95bfm.com/sites/all/themes/bfm_ui/images/95bfm-logo.svg" alt="95bFM" />
           </a>
           
 
@@ -85,7 +85,22 @@ class Home extends Component {
                   }
                 </a>
                <p>{nowPlaying.song}</p>
-               { nowPlaying.spotifyLink ? <a onClick={() => shell.openExternal(nowPlaying.spotifyLink)}>find on spotify</a> : null }
+
+               { nowPlaying.spotifyData ?
+                 <a onClick={() => {
+                   if(shell.openExternal(nowPlaying.spotifyData.appUri)){
+                    shell.openExternal(nowPlaying.spotifyData.appUri)
+                   } else {
+                    shell.openExternal(nowPlaying.spotifyData.webUrl)
+                   }
+                   }}>
+                    <img className={styles.albumArt} src={nowPlaying.spotifyData.albumArt} alt=""/>
+                    <br/>
+                    <p>find on spotify</p>
+                 </a>
+               : 
+               null }
+
             </div>
         </div>
       </div>
