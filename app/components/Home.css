@@ -12,7 +12,7 @@
 }
 
 .albumArt {
-  margin-top: 25px;
+  margin-top: 15px;
   width: 50%;
   border-radius: 10px;
 }
@@ -36,4 +36,12 @@ a:hover {
   width: 50px!important;
   height: 50px!important;
   /*fill: rgba(0, 0, 0, 0.43);*/
+}
+
+.spotify {
+ margin-top: 10px;
+}
+
+.iTunes {
+  /*margin-top: -20px;*/
 }

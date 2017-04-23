@@ -1,6 +1,6 @@
 // @flow
 
-import { SpotifySearch, BandcampSearch } from '../scripts/search';
+import { SpotifySearch, iTunesSearch, BandcampSearch } from '../scripts/search';
 
 import request from 'superagent';
 
@@ -54,8 +54,7 @@ export function nowPlayingFetchData(url) {
             // .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess('jimi hendrix - purple haze')))
             .then((nowPlaying) => {
                 spotify(dispatch, nowPlaying.nowPlaying);
-                // bandcamp(nowPlaying.nowPlaying, disptch);
-                // bandcamp(dispatch, 'PALS+-+Pipes');
+                iTunes(dispatch, nowPlaying.nowPlaying);
             })
             .catch(() => dispatch(nowPlayingHasErrored(true)));
     };
@@ -69,12 +68,27 @@ export function spotifyDispatch(dispatch, spotifyData) {
         dispatch(nowPlayingSpotify(spotifyData))
 }
 
+export function iTunes(dispatch, nowPlaying) {
+   iTunesSearch(dispatch, iTunesDispatch, nowPlaying)
+}
+
+export function iTunesDispatch(dispatch, iTunesData) {
+        dispatch(nowPlayingiTunes(iTunesData))
+}
+
 export function bandcamp(dispatch, nowPlaying) {
    BandcampSearch(dispatch, bandcampDispatch, nowPlaying)
 }
 
 export function bandcampDispatch(dispatch, bandcampLink) {
         dispatch(nowPlayingBandcamp(bandcampLink))
+}
+
+export function nowPlayingiTunes(iTunesData) {
+    return {
+        type: 'NOW_PLAYING_ITUNES',
+        iTunesData: iTunesData
+    };
 }
 
 export function nowPlayingSpotify(spotifyData) {

@@ -87,17 +87,22 @@ class Home extends Component {
                <p>{nowPlaying.song}</p>
 
                { nowPlaying.spotifyData ?
-                 <a onClick={() => {
-                   if(shell.openExternal(nowPlaying.spotifyData.appUri)){
-                    shell.openExternal(nowPlaying.spotifyData.appUri)
-                   } else {
-                    shell.openExternal(nowPlaying.spotifyData.webUrl)
-                   }
-                   }}>
+                  <div>
                     <img className={styles.albumArt} src={nowPlaying.spotifyData.albumArt} alt=""/>
-                    <br/>
-                    <p>find on spotify</p>
-                 </a>
+                    <a onClick={() => {
+                      if(shell.openExternal(nowPlaying.spotifyData.appUri)){
+                        shell.openExternal(nowPlaying.spotifyData.appUri)
+                      } else {
+                        shell.openExternal(nowPlaying.spotifyData.webUrl)
+                      }
+                      }}>
+                        <br/>
+                        <img className={styles.spotify} width="80" src="http://static.wixstatic.com/media/19262f_383ee592ecf24427829739b9e85ece42~mv2_d_4500_1680_s_2.png" alt=""/>
+                    </a>
+                    <a onClick={() => shell.openExternal(nowPlaying.iTunesData.webUrl)}>
+                        <img className={styles.iTunes} width="80" src="http://rosesandcigarettes.com/wp-content/themes/roses-theme/library/images/itunes_logo.png" alt=""/>
+                    </a>
+                  </div>
                : 
                <img className={styles.altImage} src="https://www.xtrme.com/wp-content/uploads/2011/11/record.png" alt=""/> }
 

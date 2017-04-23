@@ -43,6 +43,12 @@ export function nowPlaying(state = {}, action) {
                 spotifyData: action.spotifyData
             }
         
+        case 'NOW_PLAYING_ITUNES':
+            return {
+                ...state,
+                iTunesData: action.iTunesData
+            }
+        
         case 'NOW_PLAYING_BANDCAMP_LINK':
             return {
                 ...state,
