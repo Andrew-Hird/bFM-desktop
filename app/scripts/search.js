@@ -3,7 +3,7 @@ const bandcamp = require('bandcamp-scraper');
 
 export function SpotifySearch(dispatch, spotifyDispatch, nowPlaying) {
     if (nowPlaying.nowPlaying === "DJ's Choice") {
-        return spotifyDispatch(dispatch, false);
+        return spotifyDispatch(dispatch, null);
 
     } else {
         const nowPlayingNoSpaces = nowPlaying.replace(/\s/g, '+');
@@ -26,20 +26,20 @@ export function SpotifySearch(dispatch, spotifyDispatch, nowPlaying) {
                         }
                         return spotifyDispatch(dispatch, data);
                     } else {
-                        return spotifyDispatch(dispatch, false);
+                        return spotifyDispatch(dispatch, null);
                     }
                 }
             })
             .catch((err) => {
                 console.log('spotify error has occurred', err);
-                return spotifyDispatch(dispatch, false);
+                return spotifyDispatch(dispatch, null);
             })
     }
 }
 
 export function iTunesSearch(dispatch, iTunesDispatch, nowPlaying) {
     if (nowPlaying.nowPlaying === "DJ's Choice") {
-        return iTunesDispatch(dispatch, false);
+        return iTunesDispatch(dispatch, null);
     } else {
         const nowPlayingNoSpaces = nowPlaying.replace(/\s/g, '+');
         const song = nowPlaying.split(" - ").pop().trim();
@@ -56,17 +56,17 @@ export function iTunesSearch(dispatch, iTunesDispatch, nowPlaying) {
                     if (arr[i].trackName.toLowerCase() === song.toLowerCase()) {
                         var data = {
                             webUrl: arr[i].trackViewUrl,
-                            albumArt: arr[i].artworkUrl60
+                            albumArt: arr[i].artworkUrl100
                         }
                         return iTunesDispatch(dispatch, data);
                     } else {
-                        return iTunesDispatch(dispatch, false);
+                        return iTunesDispatch(dispatch, null);
                     }
                 }
             })
             .catch((err) => {
                 console.log('iTunes error has occurred', err);
-                return iTunesDispatch(dispatch, false);
+                return iTunesDispatch(dispatch, null);
             })
     }
 }

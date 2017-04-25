@@ -60,7 +60,7 @@ class Home extends Component {
     }
 
   render() {
-    const { streamPlaying, nowPlaying, currentShow, spotifyLink } = this.props;
+    const { streamPlaying, nowPlaying, currentShow } = this.props;
     return (
       <div>
         <div className={styles.container}>
@@ -88,7 +88,7 @@ class Home extends Component {
 
                { nowPlaying.spotifyData ?
                   <div>
-                    <img className={styles.albumArt} src={nowPlaying.spotifyData.albumArt} alt=""/>
+                    <img className={styles.albumArt} src={nowPlaying.spotifyData.albumArt || nowPlaying.iTunesData.albumArt} alt=""/>
                     <a onClick={() => {
                       if(shell.openExternal(nowPlaying.spotifyData.appUri)){
                         shell.openExternal(nowPlaying.spotifyData.appUri)
