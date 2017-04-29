@@ -25,16 +25,16 @@ const stop = <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmln
         
 
 class Home extends Component {
+
+  state = {
+    timer: null
+  }
   
    componentWillMount() {
-     this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15');
      this.props.currentShowFetchData('http://95bfm.com/block_refresh/bfm_tweaks/current_show');
    };
 
    componentDidMount() {
-     setInterval(() => {
-       this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15')
-     }, 10000)
      setInterval(() => {
        this.props.currentShowFetchData('http://95bfm.com/block_refresh/bfm_tweaks/current_show');
      }, 60000)
@@ -42,21 +42,27 @@ class Home extends Component {
 
     bFMPlay() {
       bFM = new Audio(bFMUrl);
-      // bFM.load();
       bFM.play();
       this.props.isPlaying(true);
+      this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15')
+      var timer = setInterval(() => {
+            this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15')
+      }, 10000)
+
+      this.setState({timer});
     }
 
-    // bFMPause() {
-    //   bFM.pause();
-    //   this.props.isPlaying(false);
-    // }
+    bFMPause() {
+        bFM.pause();
+        this.props.isPlaying(false);
+    }
 
     bFMStop() {
-      bFM.pause()
+      bFM.pause();
       bFM.currentTime = 0.0;
-      bFM = null
+      bFM = null;
       this.props.isPlaying(false);
+      clearInterval(this.state.timer)
     }
 
   render() {
@@ -66,11 +72,9 @@ class Home extends Component {
         <div className={styles.container}>
           
           <a onClick={() => shell.openExternal('http://95bfm.com')}>
-            {/*<img src="./images/bfm.png" alt="95bFM" />*/}
             <img className={styles.logo} src="http://95bfm.com/sites/all/themes/bfm_ui/images/95bfm-logo.svg" alt="95bFM" />
           </a>
           
-
             <div>
                <p>{currentShow.show}</p>
                 <a className={styles.controls}>
@@ -84,28 +88,32 @@ class Home extends Component {
                       <div onClick={() => this.bFMPlay()}>{play}</div>
                   }
                 </a>
-               <p>{nowPlaying.song}</p>
+                { streamPlaying ?
+                <div>
+                    <p>{nowPlaying.song}</p>
 
-               { nowPlaying.spotifyData ?
-                  <div>
-                    <img className={styles.albumArt} src={nowPlaying.spotifyData.albumArt || nowPlaying.iTunesData.albumArt} alt=""/>
-                    <a onClick={() => {
-                      if(shell.openExternal(nowPlaying.spotifyData.appUri)){
-                        shell.openExternal(nowPlaying.spotifyData.appUri)
-                      } else {
-                        shell.openExternal(nowPlaying.spotifyData.webUrl)
-                      }
-                      }}>
-                        <br/>
-                        <img className={styles.spotify} width="80" src="http://static.wixstatic.com/media/19262f_383ee592ecf24427829739b9e85ece42~mv2_d_4500_1680_s_2.png" alt=""/>
-                    </a>
-                    <a onClick={() => shell.openExternal(nowPlaying.iTunesData.webUrl)}>
-                        <img className={styles.iTunes} width="80" src="http://rosesandcigarettes.com/wp-content/themes/roses-theme/library/images/itunes_logo.png" alt=""/>
-                    </a>
-                  </div>
-               : 
-               <img className={styles.altImage} src="https://www.xtrme.com/wp-content/uploads/2011/11/record.png" alt=""/> }
-
+                    { nowPlaying.spotifyData ?
+                        <div>
+                          <img className={styles.albumArt} src={nowPlaying.spotifyData.albumArt || nowPlaying.iTunesData.albumArt} alt=""/>
+                          <a onClick={() => {
+                            if(shell.openExternal(nowPlaying.spotifyData.appUri)){
+                              shell.openExternal(nowPlaying.spotifyData.appUri)
+                            } else {
+                              shell.openExternal(nowPlaying.spotifyData.webUrl)
+                            }
+                            }}>
+                              <br/>
+                              <img className={styles.spotify} width="80" src="http://static.wixstatic.com/media/19262f_383ee592ecf24427829739b9e85ece42~mv2_d_4500_1680_s_2.png" alt=""/>
+                          </a>
+                          <a onClick={() => shell.openExternal(nowPlaying.iTunesData.webUrl)}>
+                              <img className={styles.iTunes} width="80" src="http://rosesandcigarettes.com/wp-content/themes/roses-theme/library/images/itunes_logo.png" alt=""/>
+                          </a>
+                        </div>
+                    : 
+                    <img className={styles.altImage} src="https://www.xtrme.com/wp-content/uploads/2011/11/record.png" alt=""/> }
+                </div>
+                : null }
+               
             </div>
         </div>
       </div>

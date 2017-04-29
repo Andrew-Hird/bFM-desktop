@@ -27,12 +27,13 @@ export function nowPlayingIsLoading(bool) {
 export function nowPlayingFetchDataSuccess(nowPlaying) {
     return {
         type: 'NOW_PLAYING_FETCH_DATA_SUCCESS',
-        nowPlaying
+        nowPlaying: nowPlaying
     };
 }
 
 export function nowPlayingFetchData(url) {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const state = getState();
         dispatch(nowPlayingIsLoading(true));
         request
             .get(url)
@@ -53,8 +54,10 @@ export function nowPlayingFetchData(url) {
             .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess(nowPlaying)))
             // .then((nowPlaying) => dispatch(nowPlayingFetchDataSuccess('jimi hendrix - purple haze')))
             .then((nowPlaying) => {
-                spotify(dispatch, nowPlaying.nowPlaying);
-                iTunes(dispatch, nowPlaying.nowPlaying);
+                if (nowPlaying.nowPlaying !== state.nowPlaying.song) {
+                    spotify(dispatch, nowPlaying.nowPlaying);
+                    iTunes(dispatch, nowPlaying.nowPlaying);
+                }
             })
             .catch(() => dispatch(nowPlayingHasErrored(true)));
     };
