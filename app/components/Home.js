@@ -3,31 +3,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { shell } from 'electron';
 import { Button } from 'react-toolbox/lib/button';
+import play from './images/play.svg'
+import stop from './images/stop.svg';
+import playing from './images/playing.svg';
+import pause from './images/stop.svg';
 import styles from './Home.css';
 
 const bFMUrl = 'http://streams.95bfm.com/stream128';
 let bFM = null;
 
-const play = <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 0h24v24H0z" fill="none"/>
-                  <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-              </svg>;
-
-const pause = <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 0h24v24H0z" fill="none"/>
-                  <path d="M9 16h2V8H9v8zm3-14C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-4h2V8h-2v8z"/>
-              </svg>;
-
-const stop = <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0h24v24H0z" fill="none"/>
-                <path d="M6 6h12v12H6z"/>
-             </svg>;
-        
-
 class Home extends Component {
 
   state = {
-    timer: null
+    timer: null,
+    hover: false
   }
   
    componentWillMount() {
@@ -47,6 +36,9 @@ class Home extends Component {
       this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15')
       var timer = setInterval(() => {
             this.props.nowPlayingFetchData('http://95bfm.com/block_refresh/views/playlist-block_2/node/15')
+            if (bFM.ended || bFM.error) {
+                this.bFMStop()
+            }
       }, 10000)
 
       this.setState({timer});
@@ -65,29 +57,49 @@ class Home extends Component {
       clearInterval(this.state.timer)
     }
 
+    mouseOver() {
+        this.setState({hover: true});
+    }
+
+    mouseOut() {
+        this.setState({hover: false});
+    }
+
   render() {
     const { streamPlaying, nowPlaying, currentShow } = this.props;
     return (
       <div>
         <div className={styles.container}>
-          
+
           <a onClick={() => shell.openExternal('http://95bfm.com')}>
             <img className={styles.logo} src="http://95bfm.com/sites/all/themes/bfm_ui/images/95bfm-logo.svg" alt="95bFM" />
           </a>
           
             <div>
                <p>{currentShow.show}</p>
-                <a className={styles.controls}>
+
+                <div className={styles.controls}>
                   {
                     streamPlaying ?
                       <div>
-                        {/*<div onClick={() => this.bFMPause()}>{pause}</div>*/}
-                        <div onClick={() => this.bFMStop()}>{stop}</div>
+                        { 
+                          this.state.hover ? 
+                          <div onClick={() => this.bFMStop()}>
+                              <img src={stop} alt="" onMouseOut={() => this.mouseOut()} />
+                          </div>
+                          :
+                          <div className={styles.playing}>
+                              <img src={playing} alt="" onMouseOver={() => this.mouseOver()} />
+                          </div>
+                        }
                       </div>
                     :
-                      <div onClick={() => this.bFMPlay()}>{play}</div>
+                      <div className={styles.play} onClick={() => this.bFMPlay()}>
+                          <img src={play} alt=""/>
+                      </div>
                   }
-                </a>
+                </div>
+
                 { streamPlaying ?
                 <div>
                     <p>{nowPlaying.song}</p>

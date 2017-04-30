@@ -32,16 +32,16 @@ a:hover {
   opacity: 0.75 !important;
 }
 
-.controls svg {
+.controls img {
   width: 50px!important;
   height: 50px!important;
-  /*fill: rgba(0, 0, 0, 0.43);*/
+}
+
+.play img {
+  width: 100px!important;
+  height: 100px!important;
 }
 
 .spotify {
  margin-top: 10px;
-}
-
-.iTunes {
-  /*margin-top: -20px;*/
 }
