@@ -85,7 +85,7 @@ class Home extends Component {
                         { 
                           this.state.hover ? 
                           <div onClick={() => this.bFMStop()}>
-                              <img src={stop} alt="" onMouseOut={() => this.mouseOut()} />
+                              <a href="#"><img src={stop} alt="" onMouseOut={() => this.mouseOut()} /></a>
                           </div>
                           :
                           <div className={styles.playing}>
@@ -95,7 +95,7 @@ class Home extends Component {
                       </div>
                     :
                       <div className={styles.play} onClick={() => this.bFMPlay()}>
-                          <img src={play} alt=""/>
+                          <a href="#"><img src={play} alt=""/></a>
                       </div>
                   }
                 </div>
